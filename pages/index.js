@@ -38,7 +38,7 @@ export default function Home() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            Silent Hill
           </a>
           <button
             className="navbar-toggler"
