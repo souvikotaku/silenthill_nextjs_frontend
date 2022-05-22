@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/Home.module.scss";
 import react, { useState, useEffect } from "react";
+import Link from "next/link";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
 const SilentHill1 = () => {
@@ -41,9 +42,9 @@ const SilentHill1 = () => {
       </Head>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Silent Hill 1
-          </a>
+          <Link href="#">
+            <a className="navbar-brand">Silent Hill 1</a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -58,49 +59,52 @@ const SilentHill1 = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                <Link href="#">
+                  <a className="nav-link active" aria-current="page">
+                    Home
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
+                <Link href="#">
+                  <a className="nav-link">Features</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
+                <Link href="#">
+                  <a className="nav-link">Pricing</a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown link
-                </a>
+                <Link href="#">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown link
+                  </a>
+                </Link>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <Link href="#">
+                      <a className="dropdown-item">Action</a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
+                    <Link href="#">
+                      <a className="dropdown-item">Another action</a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <Link href="#">
+                      <a className="dropdown-item">Something else here</a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -149,14 +153,11 @@ const SilentHill1 = () => {
               <li className="list-group-item">A third item</li>
             </ul> */}
               <div className="card-body">
-                <a
-                  href={monster.attributes?.page_link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="card-link"
-                >
-                  Read More
-                </a>
+                <Link href={monster.attributes?.page_link}>
+                  <a target="_blank" rel="noreferrer" className="card-link">
+                    Read More
+                  </a>
+                </Link>
                 {/* <a href="#" className="card-link">
                 Another link
               </a> */}

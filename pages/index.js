@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import Link from "next/link";
+
 import react, { useState, useEffect } from "react";
 export default function Home() {
   // useEffect(() => {
@@ -37,9 +39,9 @@ export default function Home() {
       </Head>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Silent Hill
-          </a>
+          <Link href="#">
+            <a className="navbar-brand">Silent Hill</a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -54,49 +56,52 @@ export default function Home() {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                <Link href="#">
+                  <a className="nav-link active" aria-current="page">
+                    Home
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
+                <Link href="#">
+                  <a className="nav-link">Features</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
+                <Link href="#">
+                  <a className="nav-link">Pricing</a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown link
-                </a>
+                <Link href="#">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown link
+                  </a>
+                </Link>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <Link href="#">
+                      <a className="dropdown-item">Action</a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
+                    <Link href="#">
+                      <a className="dropdown-item">Another action</a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <Link href="#">
+                      <a className="dropdown-item">Something else here</a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -153,9 +158,9 @@ export default function Home() {
                 With supporting text below as a natural lead-in to additional
                 content.
               </p>
-              <a href="/games/silentHill1" className="btn btn-primary">
-                Go
-              </a>
+              <Link href="/games/silentHill1">
+                <a className="btn btn-primary">Go</a>
+              </Link>
             </div>
           </div>
         </div>
