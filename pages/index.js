@@ -3,17 +3,17 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import react, { useState, useEffect } from "react";
 export default function Home() {
-  useEffect(() => {
-    const monsterFetchUrl =
-      "https://pure-island-40898.herokuapp.com/api/silenthill1-monsters";
+  // useEffect(() => {
+  //   const monsterFetchUrl =
+  //     "https://pure-island-40898.herokuapp.com/api/silenthill1-monsters";
 
-    const fetchData = async () => {
-      const response = await fetch(monsterFetchUrl);
-      const data = await response.json();
-      console.log(data);
-    };
-    fetchData();
-  }, []);
+  //   const fetchData = async () => {
+  //     const response = await fetch(monsterFetchUrl);
+  //     const data = await response.json();
+  //     console.log(data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className={styles.mainBackgroundDiv}>

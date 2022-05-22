@@ -8,7 +8,7 @@ const SilentHill1 = () => {
   const [monsterData, setMonsterData] = useState([]);
   useEffect(() => {
     const monsterFetchUrl =
-      "https://pure-island-40898.herokuapp.com/api/silenthill1-monsters";
+      "https://pacific-journey-89141.herokuapp.com/api/silenthill1-monsters";
 
     const fetchData = async () => {
       const response = await fetch(monsterFetchUrl);
@@ -137,7 +137,11 @@ const SilentHill1 = () => {
               <li className="list-group-item">A third item</li>
             </ul> */}
             <div className="card-body">
-              <a href="#" className="card-link">
+              <a
+                href={monster.attributes?.page_link}
+                target="_blank"
+                className="card-link"
+              >
                 Read More
               </a>
               {/* <a href="#" className="card-link">
