@@ -110,8 +110,9 @@ const SilentHill1 = () => {
       </nav>
 
       <div className="row" style={{ paddingTop: "5%" }}>
-        {monsterData.map((monster) => (
+        {monsterData.map((monster, index) => (
           <div
+            key={index}
             className="card col-md-3 col-sm-12"
             style={{ width: "18rem", margin: "1em" }}
           >
