@@ -110,47 +110,60 @@ const SilentHill1 = () => {
       </nav>
 
       <div className="row" style={{ paddingTop: "5%" }}>
-        {monsterData.map((monster, index) => (
-          <div
-            key={index}
-            className="card col-md-3 col-sm-12"
-            style={{ width: "18rem", margin: "1em" }}
-          >
+        {monsterData.map((monster, index) => {
+          const myLoader = ({ src }) => {
+            return `${monster.attributes?.page_link}`;
+          };
+          return (
             <div
-              style={{
-                height: "15em",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              className="card-img-top"
+              key={index}
+              className="card col-md-3 col-sm-12"
+              style={{ width: "18rem", margin: "1em" }}
             >
-              <img src={monster.attributes?.image_link} alt="..." />
-            </div>
+              <div
+                style={{
+                  height: "15em",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                className="card-img-top"
+              >
+                <Image
+                  // loader={myLoader}
+                  src={monster.attributes?.image_link}
+                  alt="..."
+                  width={500}
+                  height={400}
+                  // layout="fill"
+                />
+              </div>
 
-            <div className="card-body" style={{ height: "50%" }}>
-              <h5 className="card-title">{monster.attributes?.name}</h5>
-              <p className="card-text">{monster.attributes?.description}</p>
-            </div>
-            {/* <ul className="list-group list-group-flush">
+              <div className="card-body" style={{ height: "50%" }}>
+                <h5 className="card-title">{monster.attributes?.name}</h5>
+                <p className="card-text">{monster.attributes?.description}</p>
+              </div>
+              {/* <ul className="list-group list-group-flush">
               <li className="list-group-item">An item</li>
               <li className="list-group-item">A second item</li>
               <li className="list-group-item">A third item</li>
             </ul> */}
-            <div className="card-body">
-              <a
-                href={monster.attributes?.page_link}
-                target="_blank"
-                className="card-link"
-              >
-                Read More
-              </a>
-              {/* <a href="#" className="card-link">
+              <div className="card-body">
+                <a
+                  href={monster.attributes?.page_link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="card-link"
+                >
+                  Read More
+                </a>
+                {/* <a href="#" className="card-link">
                 Another link
               </a> */}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <footer className={styles.footer}>
