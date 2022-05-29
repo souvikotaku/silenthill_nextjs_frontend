@@ -119,7 +119,7 @@ const SilentHill2 = (props) => {
       </nav>
 
       <div className="row" style={{ paddingTop: "5%" }}>
-        {monsterData.map((monster, index) => {
+        {monsterData?.map((monster, index) => {
           const myLoader = ({ src }) => {
             return `${monster.page_link}`;
           };
