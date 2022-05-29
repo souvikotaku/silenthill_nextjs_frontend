@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "silenthill1_monsters",
+  "info": {
+    "singularName": "silenthill1-monster",
+    "pluralName": "silenthill1-monsters",
+    "displayName": "silenthill1-monster",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "symbolism": {
+      "type": "text"
+    },
+    "image_link": {
+      "type": "string"
+    },
+    "page_link": {
+      "type": "string"
+    }
+  }
+}

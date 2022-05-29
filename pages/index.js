@@ -56,7 +56,7 @@ export default function Home() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link href="#">
                   <a className="nav-link active" aria-current="page">
                     Home
@@ -105,7 +105,7 @@ export default function Home() {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
         </div> */}
         <div className={styles.mainCardDiv}>
           <div className={styles.innerCard}>
-            <h5 className="card-header">Silent Hill 1</h5>
+            <h5 className="card-header">Silent Hill 1 monster list</h5>
             <div className={styles.innerCardBody}>
               <h5 className="card-title" style={{ color: "transparent" }}>
                 Special title treatment

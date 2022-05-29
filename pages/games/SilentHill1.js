@@ -61,13 +61,13 @@ const SilentHill1 = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link href="#">
+                <Link href="/">
                   <a className="nav-link active" aria-current="page">
                     Home
                   </a>
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link href="#">
                   <a className="nav-link">Features</a>
                 </Link>
@@ -109,7 +109,7 @@ const SilentHill1 = () => {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
