@@ -3,7 +3,8 @@ Its a SILENT HILL webite i made using NEXT JS on the frontend and STRAPI on the 
 LIVE APP is here 
 ## https://silenthill-nextjs-frontend.vercel.app/
 
-THIS IS THE API USED (its made by me on strapi and hosted on heroku)
+THIS IS THE API USED
+(its made by me on strapi and hosted on heroku)
 ##https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
