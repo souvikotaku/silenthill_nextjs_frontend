@@ -118,7 +118,7 @@ const SilentHill1 = (props) => {
         </div>
       </nav>
 
-      <div className="row" style={{ paddingTop: "5%" }}>
+      <div className={styles.mobileRes}>
         {monsterData?.map((monster, index) => {
           const myLoader = ({ src }) => {
             return `${monster.page_link}`;
