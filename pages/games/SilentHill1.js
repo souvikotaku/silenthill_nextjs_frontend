@@ -10,13 +10,14 @@ const SilentHill1 = () => {
   const [monsterData, setMonsterData] = useState([]);
   useEffect(() => {
     const monsterFetchUrl =
-      "https://pacific-journey-89141.herokuapp.com/api/silenthill1-monsters";
+      "https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters";
 
     const fetchData = async () => {
       const response = await fetch(monsterFetchUrl);
       const data = await response.json();
-      console.log(data);
-      setMonsterData(data.data);
+      console.log(data.data);
+      console.log(data.data[0].attributes?.silenthill1monsters);
+      setMonsterData(data.data[0].attributes?.silenthill1monsters);
     };
     fetchData();
   }, []);
@@ -118,7 +119,7 @@ const SilentHill1 = () => {
       <div className="row" style={{ paddingTop: "5%" }}>
         {monsterData.map((monster, index) => {
           const myLoader = ({ src }) => {
-            return `${monster.attributes?.page_link}`;
+            return `${monster.page_link}`;
           };
           return (
             <div
@@ -146,7 +147,7 @@ const SilentHill1 = () => {
                   //   maxWidth: "50%",
                   // }}
                   // loader={myLoader}
-                  src={monster.attributes?.image_link}
+                  src={monster?.image_link}
                   alt="..."
                   width={500}
                   height={400}
@@ -155,8 +156,8 @@ const SilentHill1 = () => {
               </div>
 
               <div className="card-body" style={{ height: "50%" }}>
-                <h5 className="card-title">{monster.attributes?.name}</h5>
-                <p className="card-text">{monster.attributes?.description}</p>
+                <h5 className="card-title">{monster?.monsterName}</h5>
+                <p className="card-text">{monster?.description}</p>
               </div>
               {/* <ul className="list-group list-group-flush">
               <li className="list-group-item">An item</li>
@@ -164,7 +165,7 @@ const SilentHill1 = () => {
               <li className="list-group-item">A third item</li>
             </ul> */}
               <div className="card-body">
-                <Link href={monster.attributes?.page_link}>
+                <Link href={monster?.page_link}>
                   <a target="_blank" rel="noreferrer" className="card-link">
                     Read More
                   </a>
