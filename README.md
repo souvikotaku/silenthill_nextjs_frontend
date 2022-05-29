@@ -1,4 +1,4 @@
-
+Its a SILENT HILL webite i made using NEXT JS on the frontend and STRAPI on the backend
 LIVE APP is here 
 ## https://silenthill-nextjs-frontend.vercel.app/
 
