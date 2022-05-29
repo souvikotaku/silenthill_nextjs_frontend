@@ -6,21 +6,23 @@ import react, { useState, useEffect } from "react";
 import Link from "next/link";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
-const SilentHill1 = () => {
-  const [monsterData, setMonsterData] = useState([]);
-  useEffect(() => {
-    const monsterFetchUrl =
-      "https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters";
+const SilentHill1 = (props) => {
+  const { monsterData } = props;
+  console.log("Monster Data", monsterData);
+  // const [monsterData, setMonsterData] = useState([]);
+  // useEffect(() => {
+  //   const monsterFetchUrl =
+  //     "https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters";
 
-    const fetchData = async () => {
-      const response = await fetch(monsterFetchUrl);
-      const data = await response.json();
-      console.log(data.data);
-      console.log(data.data[0].attributes?.silenthill1monsters);
-      setMonsterData(data.data[0].attributes?.silenthill1monsters);
-    };
-    fetchData();
-  }, []);
+  //   const fetchData = async () => {
+  //     const response = await fetch(monsterFetchUrl);
+  //     const data = await response.json();
+  //     console.log(data.data);
+  //     console.log(data.data[0].attributes?.silenthill1monsters);
+  //     setMonsterData(data.data[0].attributes?.silenthill1monsters);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className={styles.mainBackgroundDiv}>

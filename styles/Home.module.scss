@@ -13,10 +13,15 @@
 }
 
 .mainCardDiv{
-  
+  --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
   .innerCard{
 width: 60% !important;
 position: relative;
@@ -28,8 +33,17 @@ position: relative;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
+    margin-bottom: 2%;
     .innerCardBody{
       background-image: url("../public/sh1-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: 1 1 auto;
+    padding: 1rem 1rem;
+    }
+    .innerCardBody2{
+      background-image: url("../public/sh2-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,18 +1,25 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.scss";
-import Link from "next/link";
 
+import Image from "next/image";
+import styles from "../../styles/Home.module.scss";
 import react, { useState, useEffect } from "react";
-export default function Home() {
+import Link from "next/link";
+import ReactReadMoreReadLess from "react-read-more-read-less";
+
+const SilentHill2 = (props) => {
+  const { monsterData } = props;
+  console.log("Monster Data", monsterData);
+  // const [monsterData, setMonsterData] = useState([]);
   // useEffect(() => {
   //   const monsterFetchUrl =
-  //     "https://pure-island-40898.herokuapp.com/api/silenthill1-monsters";
+  //     "https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters";
 
   //   const fetchData = async () => {
   //     const response = await fetch(monsterFetchUrl);
   //     const data = await response.json();
-  //     console.log(data);
+  //     console.log(data.data);
+  //     console.log(data.data[0].attributes?.silenthill1monsters);
+  //     setMonsterData(data.data[0].attributes?.silenthill1monsters);
   //   };
   //   fetchData();
   // }, []);
@@ -41,7 +48,7 @@ export default function Home() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container-fluid">
           <Link href="#">
-            <a className="navbar-brand">Silent Hill</a>
+            <a className="navbar-brand">Silent Hill 1</a>
           </Link>
           <button
             className="navbar-toggler"
@@ -56,14 +63,14 @@ export default function Home() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              {/* <li className="nav-item">
-                <Link href="#">
+              <li className="nav-item">
+                <Link href="/">
                   <a className="nav-link active" aria-current="page">
                     Home
                   </a>
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link href="#">
                   <a className="nav-link">Features</a>
                 </Link>
@@ -111,81 +118,68 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className={styles.main}>
-        {/* <h1 className={styles.title}>Welcome to Silent Hill</h1> */}
+      <div className="row" style={{ paddingTop: "5%" }}>
+        {monsterData.map((monster, index) => {
+          const myLoader = ({ src }) => {
+            return `${monster.page_link}`;
+          };
+          return (
+            <div
+              key={index}
+              className="card col-md-3 col-sm-12"
+              style={{ width: "18rem", margin: "1em" }}
+            >
+              <div
+                style={{
+                  height: "15em",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                className="card-img-top"
+              >
+                <Image
+                  // className={style.image_style}
+                  // style={{
+                  //   position: "absolute",
+                  //   inset: "0px",
+                  //   margin: "auto",
+                  //   width: "100%",
+                  //   height: "100%",
+                  //   maxWidth: "50%",
+                  // }}
+                  // loader={myLoader}
+                  src={monster?.image_link}
+                  alt="..."
+                  width={500}
+                  height={400}
+                  // layout="fill"
+                />
+              </div>
 
-        {/* <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div> */}
-        <div className={styles.mainCardDiv}>
-          <div className={styles.innerCard}>
-            <h5 className="card-header">Silent Hill 1 monster list</h5>
-            <div className={styles.innerCardBody}>
-              <h5 className="card-title" style={{ color: "transparent" }}>
-                Special title treatment
-              </h5>
-              <p className="card-text" style={{ color: "transparent" }}>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <Link href="/games/silentHill1">
-                <a className="btn btn-primary">Go</a>
-              </Link>
+              <div className="card-body" style={{ height: "50%" }}>
+                <h5 className="card-title">{monster?.monsterName}</h5>
+                <p className="card-text">{monster?.description}</p>
+              </div>
+              {/* <ul className="list-group list-group-flush">
+              <li className="list-group-item">An item</li>
+              <li className="list-group-item">A second item</li>
+              <li className="list-group-item">A third item</li>
+            </ul> */}
+              <div className="card-body">
+                <Link href={monster?.page_link}>
+                  <a target="_blank" rel="noreferrer" className="card-link">
+                    Read More
+                  </a>
+                </Link>
+                {/* <a href="#" className="card-link">
+                Another link
+              </a> */}
+              </div>
             </div>
-          </div>
-          <div className={styles.innerCard}>
-            <h5 className="card-header">Silent Hill 2 monster list</h5>
-            <div className={styles.innerCardBody2}>
-              <h5 className="card-title" style={{ color: "transparent" }}>
-                Special title treatment
-              </h5>
-              <p className="card-text" style={{ color: "transparent" }}>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              {/* <Link href="/games/silentHill2">
-                <a className="btn btn-primary" disabled>
-                  In Progress
-                </a>
-              </Link> */}
-              <button type="button" className="btn btn-warning" disabled>
-                Work In Progress
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
+          );
+        })}
+      </div>
 
       <footer className={styles.footer}>
         <a
@@ -201,4 +195,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default SilentHill2;
