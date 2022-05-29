@@ -5,7 +5,7 @@ LIVE APP is here
 
 THIS IS THE API USED
 (its made by me on strapi and hosted on heroku)
-##https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters
+https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
