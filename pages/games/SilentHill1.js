@@ -136,6 +136,15 @@ const SilentHill1 = () => {
                 className="card-img-top"
               >
                 <Image
+                  // className={style.image_style}
+                  // style={{
+                  //   position: "absolute",
+                  //   inset: "0px",
+                  //   margin: "auto",
+                  //   width: "100%",
+                  //   height: "100%",
+                  //   maxWidth: "50%",
+                  // }}
                   // loader={myLoader}
                   src={monster.attributes?.image_link}
                   alt="..."
