@@ -179,9 +179,12 @@ export default function Home() {
                   In Progress
                 </a>
               </Link> */}
-              <button type="button" className="btn btn-warning" disabled>
+              {/* <button type="button" className="btn btn-warning" disabled>
                 Work In Progress
-              </button>
+              </button> */}
+              <Link href="/games/silentHill2">
+                <a className="btn btn-primary">Go</a>
+              </Link>
             </div>
           </div>
         </div>

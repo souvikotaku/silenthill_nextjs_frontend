@@ -8,6 +8,7 @@ const PageNo = () => {
   const pageNumber = router.query.PageNo;
 
   const [monsterData, setMonsterData] = useState([]);
+  const [monsterData2, setMonsterData2] = useState([]);
   useEffect(() => {
     const monsterFetchUrl =
       "https://silenthillservice.herokuapp.com/api/silent-hill-monsters";
@@ -17,7 +18,12 @@ const PageNo = () => {
       const data = await response.json();
       console.log(data.data);
       console.log(data.data[0].attributes?.silenthill1monsters);
-      setMonsterData(data.data[0].attributes?.silenthill1monsters);
+      setMonsterData(
+        pageNumber == "silentHill1"
+          ? data.data[0].attributes?.silenthill1monsters
+          : data.data[0].attributes?.silenthill2monsters
+      );
+      // setMonsterData2(data.data[0].attributes?.silenthill2monsters);
     };
     fetchData();
   }, []);
