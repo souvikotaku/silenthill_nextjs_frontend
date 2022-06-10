@@ -10,7 +10,7 @@ const PageNo = () => {
   const [monsterData, setMonsterData] = useState([]);
   useEffect(() => {
     const monsterFetchUrl =
-      "https://pacific-journey-89141.herokuapp.com/api/silent-hill-monsters";
+      "https://silenthillservice.herokuapp.com/api/silent-hill-monsters";
 
     const fetchData = async () => {
       const response = await fetch(monsterFetchUrl);
